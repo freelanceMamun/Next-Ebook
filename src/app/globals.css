@@ -1,6 +1,7 @@
-* {
+/* * {
   background: #000000;
-}
+  color: #fff;
+} */
 
 @tailwind base;
 @tailwind components;
