@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const SingleBook = async ({ params }: { params: { bookid: string } }) => {
-  let book;
+  let book: Book | null = null;
 
   try {
     const resp = await fetch(
@@ -36,6 +36,7 @@ const SingleBook = async ({ params }: { params: { bookid: string } }) => {
           </h2>
           <span className="font-semibold">by {book?.author.name}</span>
           <p className="mt-5 text-lg leading-8">{book?.description}</p>
+
           <DownloadButton fileLink={book.file} />
         </div>
         <div className="flex justify-end">
